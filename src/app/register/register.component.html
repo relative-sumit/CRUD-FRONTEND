@@ -1,0 +1,54 @@
+<form [formGroup]="register">
+    <!-- profile -->
+    <div formGroupName="profile">
+        <label>FirstName</label><input type="text" formControlName="firstName"><br><br>
+        <label>MiddleName</label><input type="text" formControlName="middleName"><br><br>
+        <label>LastName</label><input type="text" formControlName="lastName"><br><br>
+        <!-- contact -->
+        <div formGroupName="contact">
+            <!-- phone -->
+            <div formGroupName="phone">
+                <label>Country Code</label><input type="text" formControlName="countryCode"><br><br>
+                <label>Primary</label><input type="text" formControlName="primary"><br><br>
+                <label>Backup</label><input type="text" formControlName="backup"><br><br>
+                <label>Emergency</label><input type="text" formControlName="emergency"><br><br>
+            </div>
+            <!-- email -->
+            <div formGroupName="email">
+                <label>Company Mail</label><input type="text" formControlName="companyMail"><br><br>
+                <label>Person Mail</label><input type="text" formControlName="personalMail"><br><br>
+            </div>
+            <!-- location -->
+            <div formGroupName="location">
+                <label>Flat</label><input type="text" formControlName="flat"><br><br>
+                <label>Area</label><input type="text" formControlName="area"><br><br>
+                <label>Landmark</label><input type="text" formControlName="landmark"><br><br>
+                <label>Pincode</label><input type="text" formControlName="pincode"><br><br>
+                <label>City</label><input type="text" formControlName="city"><br><br>
+                <label>State</label><input type="text" formControlName="state"><br><br>
+            </div>
+        </div>
+    </div>
+    <!-- personal -->
+    <div formGroupName="personal">
+        <label>DOB</label><input type="date" formControlName="dob"><br><br>
+        <label>DOJ</label><input type="date" formControlName="doj"><br><br>
+        <label>DOC</label><input type="date" formControlName="doc"><br><br>
+    </div>
+    <!-- employee -->
+    <div formGroupName="employee">
+        <label>Department</label><input type="text" formControlName="department"><br><br>
+        <label>Designation</label><input type="text" formControlName="designation"><br><br>
+        <label>Manager Id</label><input type="number" formControlName="managerDetails"><br><br>
+    </div>
+    <!-- asset -->
+    <div formGroupName="asset">
+        <label>Asset Id</label><input type="text" formControlName="assetId"><br><br>
+        <label>Asset Name</label><input type="text" formControlName="assetName"><br><br>
+        <label>Asset Model</label><input type="text" formControlName="assetModel"><br><br>
+        <label>Asset Type</label><input type="text" formControlName="assetType"><br><br>
+    </div>
+    <!-- role -->
+    <label>Role</label><input type="text" formControlName="role"><br><br>
+    <button (click)="addData()">register</button>
+</form>
