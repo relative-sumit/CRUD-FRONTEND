@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class RegisterComponent {
 
   register!: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.register = this.fb.group({
@@ -60,7 +61,16 @@ export class RegisterComponent {
   }
 
   show() {
-    console.log(this.register.value);
+    
+    this.toastr.success(`<i class="fas fa-bell"></i> Welcometo IN-Team`, '',{
+      timeOut: 15000,
+      closeButton: true,
+      progressBar: true,
+      progressAnimation: 'decreasing',
+      newestOnTop: true,
+      positionClass: 'toast-top-center',
+      enableHtml: true
+    })
   }
   data: any;
   name: any;
@@ -71,7 +81,16 @@ export class RegisterComponent {
       this.data = response
       this.name =  this.data.Employee.profile.firstName
       console.log(`Welcome ${this.name} to the IN-Team`);
-      alert(`Welcome ${this.name} to the IN-Team`);
+      // alert(`Welcome ${this.name} to the IN-Team`);
+      this.toastr.success(`Welcome ${this.name} to IN-Team`, 'Congratulations 🎉🤝',{
+        timeOut: 15000,
+        closeButton: true,
+        progressBar: true,
+        progressAnimation: 'decreasing',
+        newestOnTop: true,
+        positionClass: 'toast-top-center',
+        enableHtml: true
+      })
     })
   }
 }
