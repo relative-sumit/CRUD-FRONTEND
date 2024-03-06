@@ -21,40 +21,40 @@ export class RegisterComponent {
         lastName: [''],
         contact: this.fb.group({
           phone: this.fb.group({
-            countryCode: [''],
-            primary: [''],
-            backup: [''],
-            emergency: ['']
+            countryCode: ['+91'],
+            primary: ['9876543212'],
+            backup: ['9876543212'],
+            emergency: ['9876543212']
           }),
           email: this.fb.group({
-            companyMail: [''],
+            companyMail: ['example@emp.in'],
             personalMail: ['']
           }),
           location: this.fb.group({
-            flat: [''],
-            area: [''],
-            landmark: [''],
-            pincode: [''],
-            city: [''],
-            state: ['']
+            flat: ['abc'],
+            area: ['hij'],
+            landmark: ['near xyz'],
+            pincode: ['980789'],
+            city: ['y-city'],
+            state: ['x-state']
           })
         })
       }),
       personal: this.fb.group({
-        dob: [''],
-        doj: [''],
-        doc: ['']
+        dob: ['2000-01-02'],
+        doj: ['2000-01-02'],
+        doc: ['2000-01-02']
       }),
       employee: this.fb.group({
-        department: [''],
+        department: ['IT'],
         designation: [''],
         managerDetails: ['']
       }),
       asset: this.fb.group({
-        assetId: [''],
-        assetName: [''],
-        assetModel: [''],
-        assetType: ['']
+        assetId: ['Dis'],
+        assetName: ['co'],
+        assetModel: ['model'],
+        assetType: ['type']
       }),
       role: ['']
     });
@@ -62,15 +62,7 @@ export class RegisterComponent {
 
   show() {
     
-    this.toastr.success(`<i class="fas fa-bell"></i> Welcometo IN-Team`, '',{
-      timeOut: 15000,
-      closeButton: true,
-      progressBar: true,
-      progressAnimation: 'decreasing',
-      newestOnTop: true,
-      positionClass: 'toast-top-center',
-      enableHtml: true
-    })
+    console.log(this.register.value)
   }
   data: any;
   name: any;
