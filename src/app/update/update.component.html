@@ -1,4 +1,4 @@
-<form [formGroup]="register">
+<form [formGroup]="updateForm">
     <!-- profile -->
     <div formGroupName="profile">
         <label>FirstName</label><input type="text" formControlName="firstName"><br><br>
@@ -39,7 +39,9 @@
     <div formGroupName="employee">
         <label>Department</label><input type="text" formControlName="department"><br><br>
         <label>Designation</label><input type="text" formControlName="designation"><br><br>
-        <label>Manager Id</label><input type="number" formControlName="managerDetails"><br><br>
+        <div formGroupName="managerDetails">
+            <label>Manager Id</label><input type="number" formControlName="employeeId"><br><br>
+        </div>
     </div>
     <!-- asset -->
     <div formGroupName="asset">
@@ -50,5 +52,6 @@
     </div>
     <!-- role -->
     <label>Role</label><input type="text" formControlName="role"><br><br>
-    <button (click)="addData()">register</button>
+    <button (click)="updateData()">update</button>
 </form>
+

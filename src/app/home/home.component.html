@@ -1,2 +1,11 @@
-<a routerLink="/register" routerLinkActive="active">Register</a>
-
+<div class="home-container">
+  <h2>Hello, {{ employeeId }}!</h2>
+</div>
+<div>
+  <a routerLink="/register" routerLinkActive="active">Register</a>
+</div><br><br>
+<h4>Update Employee Details :</h4>
+<div>
+  <input type="number" [(ngModel)]="eId" placeholder="Enter the employeeId">
+  <button (click)="navidateToUpdatePage()">Update</button>
+</div>

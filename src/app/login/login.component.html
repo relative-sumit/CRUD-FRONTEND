@@ -1,0 +1,8 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="login()">
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" name="employeeId" [(ngModel)]="employeeId" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
